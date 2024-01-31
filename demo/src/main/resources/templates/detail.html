@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Price Detail</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<h1 th:if="${price.id}">Price Detail</h1>
+	<h1 th:unless="${price.id}">New Price</h1>
+	
+	<form action="#" th:object="${price}" method="post">
+    	<p th:if="*{id}">Id: [[*{id}]]</p>
+        <p>Item: <input type="text" th:field="*{item}" /></p>
+        <p>Price: <input type="number" th:field="*{price}" /></p>
+        <p><input class="btn-primary" type="submit" value="Submit" /></p>
+    </form>
+    <a class="btn-primary" href="/price/list">List Prices</a>
+</body>
+</html>
