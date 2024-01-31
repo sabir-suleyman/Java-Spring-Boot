@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Price List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/price.js}"></script>
+</head>
+<body>
+	<h1>Price List</h1>
+
+    <table>
+		<tr th:each="x: ${prices}">
+			<td th:text="${x.id}" />
+			<td th:text="${x.item}" />
+			<td class="price" th:text="${x.price}" />
+			<td>
+				<a th:href="@{'/price/' + ${x.id}}">Edit</a>
+			</td>
+		</tr>
+	</table>
+		
+	<a class="btn-primary mt-4" href="/price/">New Price</a>
+</body>
+</html>
