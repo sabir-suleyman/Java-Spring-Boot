@@ -1,0 +1,15 @@
+.btn-primary {
+	border: 1px solid gray;
+	padding: 4px 8px;
+	border-radius: 12px;
+	background-color: white;
+	text-decoration: none;
+	color: black;
+	display: inline-block;
+}
+
+.btn-primary:hover {
+	cursor: pointer;
+	background-color: gray;
+	color: white;
+}
